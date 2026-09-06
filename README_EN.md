@@ -11,6 +11,8 @@ Fast DNS profile switching on Windows through the desktop app, system tray, or C
 [![CI](https://github.com/Regstar2/dns-switcher/actions/workflows/ci.yml/badge.svg)](https://github.com/Regstar2/dns-switcher/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-2EA44F?style=for-the-badge)](LICENSE.md)
 
+[🌐 Project website](https://regstar2.github.io/projects/dns-switcher/) · [Русская версия](https://regstar2.github.io/projects/dns-switcher/ru/)
+
 [Download](https://github.com/Regstar2/dns-switcher/releases/tag/v1.5.0) · [Quick start](#quick-start) · [Documentation](#documentation) · [Changelog](CHANGELOG.md)
 
 </div>
