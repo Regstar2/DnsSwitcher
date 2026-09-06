@@ -11,6 +11,8 @@
 [![CI](https://github.com/Regstar2/dns-switcher/actions/workflows/ci.yml/badge.svg)](https://github.com/Regstar2/dns-switcher/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-2EA44F?style=for-the-badge)](LICENSE.md)
 
+[🌐 Страница проекта](https://regstar2.github.io/projects/dns-switcher/ru/) · [English website](https://regstar2.github.io/projects/dns-switcher/)
+
 [Скачать](https://github.com/Regstar2/dns-switcher/releases/tag/v1.5.0) · [Быстрый старт](#быстрый-старт) · [Документация](#документация) · [История изменений](CHANGELOG.md)
 
 </div>
