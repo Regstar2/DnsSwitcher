@@ -15,7 +15,7 @@ permissions:
 jobs:
   build-test:
     name: Release build and tests
-    runs-on: [self-hosted, Windows, X64]
+    runs-on: windows-latest
     timeout-minutes: 35
     steps:
       - name: Checkout exact commit
@@ -24,11 +24,17 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           clean: true
 
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
       - name: Verify checkout
         shell: pwsh
         run: |
           git status --short
           git rev-parse HEAD
+          dotnet --info
 
       - name: Restore
         shell: pwsh
