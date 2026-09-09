@@ -7,11 +7,25 @@ public sealed class AgentDeploymentLayoutTests
     [Fact]
     public void GetApplicationRoot_ReturnsRepositoryRoot_ForCliBuildOutput()
     {
-        var baseDirectory = @"C:\Base\projects\changeDNS\src\DnsSwitcher.Cli\bin\Release\net10.0\";
+        var tempRoot = Path.Combine(Path.GetTempPath(), "DnsSwitcherTests", Guid.NewGuid().ToString("N"));
+        var baseDirectory = Path.Combine(tempRoot, "src", "DnsSwitcher.Cli", "bin", "Release", "net10.0");
 
-        var root = AgentDeploymentLayout.GetApplicationRoot(baseDirectory);
+        try
+        {
+            Directory.CreateDirectory(baseDirectory);
+            File.WriteAllText(Path.Combine(tempRoot, "DnsSwitcher.sln"), string.Empty);
 
-        Assert.Equal(@"C:\Base\projects\changeDNS", root);
+            var root = AgentDeploymentLayout.GetApplicationRoot(baseDirectory);
+
+            Assert.Equal(tempRoot, root);
+        }
+        finally
+        {
+            if (Directory.Exists(tempRoot))
+            {
+                Directory.Delete(tempRoot, recursive: true);
+            }
+        }
     }
 
     [Fact]
